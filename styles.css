@@ -39,20 +39,39 @@ body {
   gap: 2rem;
 }
 
-.nav_items {
+.nav-menu {
   display: flex;
   justify-content: space-around;
   gap: 3rem;
   align-items: center;
 }
 
-li a {
+.nav-link {
   color: #575757;
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 130%; 
+  line-height: 130%;
+}
+
+.nav-link:hover {
+  color: dodgerblue;
+}
+
+.humburger {
+  cursor: pointer;
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #FB9333;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 li .active {
@@ -62,7 +81,8 @@ li .active {
   font-style: normal;
   font-weight: 700;
   line-height: 130%;
-}
+} 
+
 
 .btn{
   display: flex;

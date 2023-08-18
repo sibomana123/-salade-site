@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="signup.css">
+  <script src="https://kit.fontawesome.com/39e3f91239.js" crossorigin="anonymous"></script>
+  <title>sign up page</title>
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h1 id="title">Sign Up</h1>
+      <form name="myForm" method="post" action="https://formspree.io/f/mzblzgdw" onsubmit="formHandle()">
+        <div class="input-group">
+          <div class="input-field nameField">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" placeholder="Name" name="name">
+          </div>
+          <div class="input-field">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" placeholder="Email" name="password">
+          </div>
+          <div class="input-field">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" placeholder="Password" name="password">
+          </div> 
+          <div class="input-field nameField">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" placeholder="confirm password" name="password">
+          </div>           
+          <p>Forget password <a href="#">Click Here</a></p>                   
+        </div>
+        <div class="btn-field">
+          <button type="button" id="signupBtn">Sign up</button>
+          <button type="button" class="disable" id="signinBtn">Sign in</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="sign.js"></script>
+  
+</body>
+</html>
