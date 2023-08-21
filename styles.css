@@ -225,7 +225,8 @@ li .active {
 
 /* =================about============ */
 
-#about_us {
+
+#about {
   background-color: #fff;
   padding: 100px 135px;
   display: flex;
@@ -235,7 +236,6 @@ li .active {
 
 .about__title {
   display: flex;
-  gap: 134px;
 }
 
 .about__title h2 {
@@ -286,7 +286,6 @@ color: var(--btn-col);
 }
 
 .img_container img {
-
   width: 30px;
   height: 30px;
   flex-shrink: 0;
@@ -298,8 +297,8 @@ color: var(--btn-col);
   padding: 30px;
   align-items: flex-start;
   gap: 10px;
-  /* width: 260px; */
-  /* height: auto; */
+  width: 300px;
+  height: auto;
 
   border-radius: 30px;
   border: 1px solid #FFF0DA;
@@ -368,18 +367,18 @@ color: var(--btn-col);
 
 .referance {
   display: flex;
-  /* display: none; */
   padding: 120px 135px;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   background: linear-gradient(180deg, #FFF6EA 0%, rgba(255, 232, 199, 0.50) 100%);
 }
 
 .referance__container {
-  display: grid;
-  grid-template-columns: 30% 60%;
-  gap: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
 }
 
 .refer_left {
@@ -438,26 +437,27 @@ color: var(--btn-col);
   justify-content: center;
 }
 
-.refer_right {
-  display: flex;
-  gap: 30px;
-}
-
 .person {
   border-radius: 8px;
   background: #FFF;
   position: relative;
-}
+  padding: 14px 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 740px;
+} 
+
+
 
 .person img {
   width: 90px;
   height: 90px;
   flex-shrink: 0;
-  border-radius: 8px;
+  border-radius: 50%;
   position: absolute;
-  float: right;
   top: -2rem;
-  left: 24px;
 }
 
 .person h4 {
