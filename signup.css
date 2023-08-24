@@ -28,7 +28,7 @@
 
 .form-box h1 {
   font-size: 30px;
-  color: #3c00a0;
+  color: #FB9333;
   position: relative;
   margin-bottom: 40px;
 }
@@ -38,7 +38,7 @@
   width: 30px;
   height: 4px;
   border-radius: 1px;
-  background-color: #3c00a0;
+  background-color: #FB9333;
   position: absolute;
   bottom: -12px;
   left: 50%;
@@ -71,12 +71,13 @@ input {
 
 form p {
   text-align: left;
-  font-size: 13px;
+  font-size: 19px;
 }
 
 form p a {
   text-decoration: none;
-  color: #3c00a0;
+  color: #FB9333;
+  font-size: 19px;
 }
 
 .btn-field {
@@ -87,7 +88,7 @@ form p a {
 
 .btn-field button {
   flex-basis: 48%;
-  background-color: #3c00a0;
+  background-color: #FB9333;
   color: #fff;
   height: 40px;
   border-radius: 20px;

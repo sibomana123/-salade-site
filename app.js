@@ -103,8 +103,10 @@ function showPerson(person) {
 }
 
 nextBtn.addEventListener('click', () => {
+  nextBtn.style.backgroundColor = "#FB9333";
+  prevBtn.style.backgroundColor = "#FFC87A";
+
   currentItem++;
-  
   if (currentItem > reviewers.length - 1) {
     currentItem=0
   }
@@ -112,10 +114,24 @@ nextBtn.addEventListener('click', () => {
 })
 
 prevBtn.addEventListener("click", () => {
+  prevBtn.style.backgroundColor = "#FB9333";
+  nextBtn.style.backgroundColor = "#FFC87A";
   currentItem--;
   if (currentItem < 0) {
     currentItem = reviewers.length-1
   }
   showPerson(currentItem);
 });
+
+
+
+// less page
+
+const LearnMore = document.querySelectorAll(".more");
+
+for (let i = 0; i < LearnMore.length; i++){
+  LearnMore[i].addEventListener('click', () => {
+    LearnMore[i].parentNode.classList.toggle('active')
+  })
+}
 

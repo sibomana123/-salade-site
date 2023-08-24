@@ -5,6 +5,7 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 :root {
@@ -25,7 +26,7 @@ body {
 .logo {
   color: #585858;
   font-family: Roboto;
-  font-size: 24px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -49,7 +50,7 @@ body {
 .nav-link {
   color: #575757;
   font-family: Poppins;
-  font-size: 16px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 500;
   line-height: 130%;
@@ -77,14 +78,19 @@ body {
 li .active {
   color: #FB9300;
   font-family: Poppins;
-  font-size: 16px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: 130%;
 } 
 
 
-.btn{
+.btn {
+  border: none;
+  background-color: transparent;
+}
+
+.btn a {
   display: flex;
   width: 130px;
   height: 54px;
@@ -98,7 +104,7 @@ li .active {
 
   color: #fff;
   font-family: Poppins;
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 130%;
@@ -298,14 +304,26 @@ color: var(--btn-col);
   align-items: flex-start;
   gap: 10px;
   width: 300px;
-  height: auto;
-
   border-radius: 30px;
   border: 1px solid #FFF0DA;
   background: #FFF;
 }
 
-.modal_container h3 {
+.modal_container .content {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+
+.modal_container.active .content {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+
+.modal_container .content h3{
   color: #2B2B2B;
   font-family: Poppins;
   font-size: 20px;
@@ -313,8 +331,7 @@ color: var(--btn-col);
   font-weight: 600;
   line-height: 180%;
 }
-
-.modal_container p {
+.modal_container .content p{
   color: #575757;
   font-family: Poppins;
   font-size: 16px;
@@ -324,34 +341,76 @@ color: var(--btn-col);
   letter-spacing: -0.32px;
 }
 
-.learn1 {
+
+.modal_container .more {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.6rem;
-  /* padding-top: 2rem; */
+  gap: 0.6rem; 
+  background-color: rgb(128, 128, 235);
+  padding: 1rem;
+  width: 75%;
+  margin-top: 0.7rem;
+  border-radius: 8px;
+  cursor: pointer; 
+  outline: none;
+  border: none;
 
 }
 
-.learn2 {
+.more::before {
+  content: "Read More";
+}
+
+.modal_container.active .more {
+  background-color: #FB9300;
+}
+
+.modal_container.active .more::before {
+  content: "Read less";
+}
+
+
+
+
+
+
+
+
+
+
+/* .modal_container h3 {
+
+} */
+
+/* .modal_container p {
+
+} */
+
+/* .learn {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.6rem;
+  background-color: rgb(128, 128, 235);
   padding: 0.3rem;
   width: 75%;
   margin-top: 0.7rem;
-
   border-radius: 8px;
-  background: #FB9333;
+  cursor: pointer;
+} */
+
+/* .learn p {
+  color: white;
+  font-size: 18px;
 }
 
-.learn3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.6rem;
+.learn p {
+  color: white;
+  font-size: 18px;
 }
+
 
 .fa-arrow-right {
   display: flex;
@@ -361,7 +420,7 @@ color: var(--btn-col);
   align-items: center;
   flex-shrink: 0;
   color: #828282;
-}
+} */
 
 /* ================Refference=========================== */
 
