@@ -372,56 +372,6 @@ color: var(--btn-col);
 }
 
 
-
-
-
-
-
-
-
-
-/* .modal_container h3 {
-
-} */
-
-/* .modal_container p {
-
-} */
-
-/* .learn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.6rem;
-  background-color: rgb(128, 128, 235);
-  padding: 0.3rem;
-  width: 75%;
-  margin-top: 0.7rem;
-  border-radius: 8px;
-  cursor: pointer;
-} */
-
-/* .learn p {
-  color: white;
-  font-size: 18px;
-}
-
-.learn p {
-  color: white;
-  font-size: 18px;
-}
-
-
-.fa-arrow-right {
-  display: flex;
-  width: 24px;
-  height: 24px;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  color: #828282;
-} */
-
 /* ================Refference=========================== */
 
 .referance {
@@ -599,35 +549,123 @@ color: var(--btn-col);
 }
 
 .available img{
-  width: 300px;
-  padding-top: 71px;
+  width: 400px;
+  margin-top: 71px;
 }
 
 .available p {
   position: absolute;
-  bottom: 7rem;
+  bottom: 3rem;
   left: 60px;
   color: #fff;
   font-family: Poppins;
-  font-size: 24px;
+  font-size: 27px;
   font-style: normal;
   font-weight: 500;
   line-height: 130%;
+}
+
+
+
+
+
+
+
+/* when clicked one Plate oF salade */
+
+.menu-modal-review{
+  position: fixed;
+   top:0; left:0;
+   min-height: 100vh;
+   width: 100%;
+   background: rgba(0,0,0,.8);
+   display: none;
+   align-items: center;
+   justify-content: center
+}
+
+
+.menu-modal-review .av {
+   display: none;
+   padding:2rem;
+   background: #fff;
+   position: relative;
+   margin:2rem;
+   max-width: 800px;
+}
+
+.menu-modal-review .av.active {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+
+.menu-modal-review .av-right .close  {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  font-size: 45px;
+  color: #FB9300;
+  font-weight: bold;
+  cursor: pointer;
 
 }
 
-.available span {
-  position: relative;
-  left: 100px;
-  bottom: 4rem;
+.menu-modal-review .av-right .av-right-content  {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding: 4rem 1rem;
 
-  color: #fff;
-  font-family: Poppins;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 130%; 
 }
+
+.menu-modal-review .av-right .av-right-content .salade_p, .prce{
+   font-size: 23px;
+   font-weight: bold;
+}
+
+.menu-modal-review .av-right .av-right-content .salade_p .salade-name, .price{
+   font-size: 17px;
+   font-style: italic;
+   color: #FFC87A;
+}
+
+.menu-modal-review .av-right .desc {
+   font-size: 17px;
+   margin-left: 2rem;
+   word-spacing: 1.4;
+   line-height: 1.5; 
+}
+
+.menu-modal-review .av-right .price {
+   font-size: 17px;
+}
+
+.btn-buy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  width: 100%;
+  gap: 2rem;
+}
+
+.btn-buy button {
+  padding: 16px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background-color: #FB9300;
+}
+
+
+
+
+
 
 /* ==================SUBSCRIBE============= */
 .subscribe {

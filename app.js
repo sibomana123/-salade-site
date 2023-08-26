@@ -125,7 +125,7 @@ prevBtn.addEventListener("click", () => {
 
 
 
-// less page
+// READ MORE
 
 const LearnMore = document.querySelectorAll(".more");
 
@@ -134,4 +134,39 @@ for (let i = 0; i < LearnMore.length; i++){
     LearnMore[i].parentNode.classList.toggle('active')
   })
 }
+
+
+// READ MORE
+const ModalContainer = document.querySelector(".menu-modal-review");
+const ModalContentBox = document.querySelectorAll('.av')
+const product = document.querySelectorAll(".available");
+const closeModal = document.querySelectorAll(".close");
+
+
+
+product.forEach(product => product.addEventListener('click', () => {
+  ModalContainer.style.display = 'flex'
+  
+  let name = product.getAttribute('data-name')
+  ModalContentBox.forEach((pdtItem) => {
+    let target = pdtItem.getAttribute('data-target')
+    
+    if (name === target) {
+      pdtItem.classList.add('active')
+    }
+  })
+}))
+
+
+
+ModalContentBox.forEach(close => {
+  close.querySelector('.close').addEventListener('click', () => {
+        close.classList.remove("active");
+        ModalContainer.style.display = "none";
+  })
+})
+
+
+
+
 

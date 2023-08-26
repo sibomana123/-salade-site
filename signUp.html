@@ -11,35 +11,145 @@
   <div class="container">
     <div class="form-box">
       <h1 id="title">Sign Up</h1>
-      <form name="myForm" method="post" action="https://formspree.io/f/mzblzgdw" onsubmit="formHandle()">
+      <form name="myForm" method="post">
         <div class="input-group">
           <div class="input-field nameField">
             <i class="fa-solid fa-user"></i>
-            <input type="text" placeholder="Name" name="name">
+            <input type="text" placeholder="Name" name="name" id="name">
           </div>
           <div class="input-field">
             <i class="fa-solid fa-envelope"></i>
-            <input type="email" placeholder="Email" name="password">
+            <input type="email" placeholder="Email" name="password" id="email">
           </div>
           <div class="input-field">
             <i class="fa-solid fa-lock"></i>
-            <input type="password" placeholder="Password" name="password">
+            <input type="password" placeholder="Password" name="password" id="password">
           </div> 
-          <div class="input-field nameField">
+          <!-- <div class="input-field nameField">
             <i class="fa-solid fa-lock"></i>
             <input type="password" placeholder="confirm password" name="password">
-          </div>           
+          </div>            -->
           <p>Forget password <a href="#">Click Here</a></p>                   
         </div>
         <div class="btn-field">
-          <button type="button" id="signupBtn">Sign up</button>
-          <button type="button" class="disable" id="signinBtn">Sign in</button>
+          <button type="submit" id="signupBtn">Sign up</button>
+          <button type="submit" class="disable" id="signinBtn">Sign in</button>
         </div>
       </form>
     </div>
   </div>
 
-  <script src="sign.js"></script>
+  <!-- <script src="sign.js"></script> -->
+
+  <script type="module">
+
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
+  import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword , signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBUvvLFurjenob_-huNEnjSCXPKmTaAN0I",
+    authDomain: "auth-app-aefe6.firebaseapp.com",
+    projectId: "auth-app-aefe6",
+    storageBucket: "auth-app-aefe6.appspot.com",
+    messagingSenderId: "301179388032",
+    appId: "1:301179388032:web:ea9e3ce990e768855b2665"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const auth = getAuth();
+
+
+
+  
+const nameField= document.querySelectorAll('.nameField')
+const signupBtn = document.getElementById("signupBtn");
+const signBtn = document.getElementById("signinBtn");
+const title = document.getElementById("title");
+
+
+
+signBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  const email= document.getElementById('email').value
+  const password= document.getElementById('password').value
+
+
+  nameField.forEach(field=> field.style.maxHeight = '0')
+  title.innerHTML = "Sign In"
+  signBtn.classList.remove('disable')
+  signupBtn.classList.add("disable");
+
+
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+     
+    const dt= new Date()
+    update(ref("users/", + user.uid), {
+      last_login: dt,
+    })
+    alert('You are logged in')
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+
+    alert(errorMessage)
+  });
+
+
+})
+
+
+
+// sign up
+
+signupBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+const email= document.getElementById('email').value
+const password= document.getElementById('password').value
+const username= document.getElementById('name').value
+
+  nameField.forEach((field) => (field.style.maxHeight = "60px"));
+  title.innerHTML = "Sign Up";
+  signBtn.classList.add("disable");
+  signupBtn.classList.remove("disable");
+
+
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    alert('Successful created Account')
+    // ...
+
+    set(ref(database, 'users/' + user.uid), {
+      username:username,
+      email:email
+    })
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage)
+    // ..
+  });
+
+});
+
+
+</script>
   
 </body>
 </html>
