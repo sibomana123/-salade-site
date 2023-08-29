@@ -300,8 +300,8 @@ color: var(--btn-col);
 .modal_container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 30px;
-  align-items: flex-start;
   gap: 10px;
   width: 300px;
   border-radius: 30px;
@@ -343,20 +343,22 @@ color: var(--btn-col);
 
 
 .modal_container .more {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.6rem; 
+
   background-color: rgb(128, 128, 235);
   padding: 1rem;
-  width: 75%;
   margin-top: 0.7rem;
   border-radius: 8px;
   cursor: pointer; 
   outline: none;
   border: none;
+  width: 50%;
+}
 
+.modal_container .more:hover {
+  background-color: rgb(16, 225, 218);
+  color: red;
+  font-size: 17px;
+  transition: ease-in 2ms;
 }
 
 .more::before {
