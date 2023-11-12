@@ -83,6 +83,10 @@ li .active {
   font-weight: 700;
   line-height: 130%;
 } 
+ 
+ .logo {
+  background-color: red;
+ }
 
 
 .btn {
